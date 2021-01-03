@@ -1,5 +1,5 @@
-# PizzaPizzaRandomizer.py
-# Helps you decide what to order at Pizza Pizza
+# CokeFreestyleRandomizer.py
+# Helps you decide what to order at your local Coca-Cola Freestyle
 
 import random
 
