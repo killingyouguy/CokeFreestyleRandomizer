@@ -2,6 +2,7 @@
 # Helps you decide what to order at your local Coca-Cola Freestyle
 
 import random
+import pdb
 
 soda = [
     "Coca Cola",
@@ -238,10 +239,21 @@ by Killingyouguy
 
 We're preparing your magical beverage...""")
 
-number = random.randint(1, 4)
+total_percentage = 0
+selected_sodas = []
 
-for i in range(0, number):
-    print("{1}% of {0}".format(getRandom(soda), (1/number)*100))
+while (total_percentage < 100):
+    soda_percentage = random.randint(25, 100)
+    if(soda_percentage + total_percentage > 100):
+        soda_percentage = 100 - total_percentage
+    total_percentage += soda_percentage
+    
+    soda_name = getRandom(soda)
+    while(soda_name in selected_sodas):
+        soda_name = getRandom(soda) # boy i wish i could just use a do-while loop
+    selected_sodas.append(soda_name)
+
+    print("{0}% of {1}".format(soda_percentage, soda_name))
 
 print("\nEnjoy!!")
 input("Press enter to exit...")
